@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 import time
 import MySQLdb
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # GPIO definieren
