@@ -27,17 +27,16 @@ for line in w1_slaves:
 
   #DB Verbindung
 db = MySQLdb.connect(host="nas1", user="statistik", passwd="statistik", db="statistik")
-
-            cursor = db.cursor()
-            cursor.execute("""INSERT INTO temp (sensor_id,temperatur) VALUES ($w1_slave,$temperature""")
-            db.commit()
-            cursor.close()
-    time.sleep(5)
+cursor = db.cursor()
+cursor.execute("""INSERT INTO temp (sensor_id,temperatur) VALUES ($w1_slave,$temperature""")
+db.commit()
+cursor.close()
+time.sleep(5)
 
 
   # Temperatur ausgeben
 
 
-  print(str(w1_slave) + ': %6.2f °C' % temperature)
+print(w1_slave) + ': %6.2f Â°C' % temperature)
 
 sys.exit(0)
